@@ -16,16 +16,15 @@ from fabric.api import run, execute, task, sudo, env
 import os
 import posixpath
 
-
 if env.ssh_config_path and os.path.isfile(os.path.expanduser(env.ssh_config_path)):
     env.use_ssh_config = True
-
 
 env.project = 'bigday'
 env.code_branch = 'master'
 env.sudo_user = 'czue'
 
 ENVIRONMENTS = ('production',)
+
 
 @task
 def _setup_path():
@@ -37,6 +36,7 @@ def _setup_path():
     env.virtualenv_root = posixpath.join(env.root, 'python_env')
     env.services = posixpath.join(env.home, 'services')
     env.db = '%s_%s' % (env.project, env.environment)
+
 
 @task
 def production():
@@ -53,6 +53,7 @@ def update_code():
         sudo('git reset --hard origin/%(code_branch)s' % env, user=env.sudo_user)
         # remove all .pyc files in the project
         sudo("find . -name '*.pyc' -delete", user=env.sudo_user)
+
 
 @task
 def deploy():
@@ -108,6 +109,7 @@ def services_start():
     _supervisor_command('reload')
     _supervisor_command('start  all')
 
+
 def services_stop():
     ''' Stop the gunicorn servers '''
     require('environment', provided_by=ENVIRONMENTS)
@@ -127,12 +129,14 @@ def migrate():
     with cd(env.code_root):
         sudo('%(virtualenv_root)s/bin/python manage.py migrate --noinput' % env, user=env.sudo_user)
 
+
 def _do_collectstatic():
     """
     Collect static after a code update
     """
     with cd(env.code_root):
         sudo('%(virtualenv_root)s/bin/python manage.py collectstatic --noinput' % env, user=env.sudo_user)
+
 
 @task
 def collectstatic():
@@ -146,9 +150,10 @@ def _supervisor_command(command):
     require('hosts', provided_by=ENVIRONMENTS)
     sudo('supervisorctl %s' % (command), shell=False, user='root')
 
+
 @task
 def print_supervisor_files():
     for fname in os.listdir('deploy/supervisor'):
         with open(os.path.join('deploy', 'supervisor', fname)) as f:
-            print '%s:\n\n' % fname
-            print f.read() % env
+            print('%s:\n\n' % fname)
+            print(f.read() % env)

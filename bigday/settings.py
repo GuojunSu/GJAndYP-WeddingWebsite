@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,16 +26,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
+# note the INSTALLED_APPS setting at the top of the file.
+# That holds the names of all Django applications that are activated in this Django instance.
+# Apps can be used in multiple projects,
+# and you can package and distribute them for use by others in their projects.
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',  # The admin site. You’ll use it shortly.
+    'django.contrib.auth',  # An authentication system.
+    'django.contrib.contenttypes',  # A framework for content types.
+    'django.contrib.sessions',  # A session framework.
+    'django.contrib.messages',  # A messaging framework.
+    'django.contrib.staticfiles',  # A framework for managing static files.
     'guests.apps.GuestsConfig',
 ]
 
@@ -72,17 +73,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bigday.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # The name of your database. If you’re using SQLite, the database will be a file on your computer;
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -102,7 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -116,7 +115,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -127,15 +125,15 @@ STATICFILES_DIRS = (
 )
 
 # the address your emails (save the dates/invites/etc.) will come from
-DEFAULT_WEDDING_FROM_EMAIL = 'You and Your Partner <happilyeverafter@example.com>'
+DEFAULT_WEDDING_FROM_EMAIL = '信箱 <yui745698@gmail.com>'
 # the default reply-to of your emails
-DEFAULT_WEDDING_REPLY_EMAIL = 'happilyeverafter@example.com'
+DEFAULT_WEDDING_REPLY_EMAIL = 'yui745698@gmail.com'
 
 # when sending test emails it will use this address
 DEFAULT_WEDDING_TEST_EMAIL = DEFAULT_WEDDING_FROM_EMAIL
 
 # This is used in a few places where the names of the couple are used
-BRIDE_AND_GROOM = 'Cory and Rowena'
+BRIDE_AND_GROOM = 'GUOJUN And YUIPEI'
 
 # This is used in links in save the date / invitations
 WEDDING_WEBSITE_URL = 'http://thehappycouple.com'
