@@ -1,0 +1,28 @@
+<html>
+   <body>
+      <a id="id1"></a>
+      <script>
+         function initMap() {
+            let urlParams = new URLSearchParams(window.location.search);
+            var departure = urlParams.get('Departure');
+            var destination = urlParams.get('Destination');
+            var mode = urlParams.get('Mode');
+            var directionsService = new google.maps.DirectionsService();
+            var directionsDisplay = new google.maps.DirectionsRenderer();
+            var request = {
+               origin: departure,
+               destination: destination,
+               travelMode: mode
+            };
+            directionsService.route(request, function(result, status) {
+               if (status == 'OK') {
+                  document.getElementById('id1').textContent = JSON.stringify(result);
+               }
+            });
+         }
+      </script>
+      <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE82IF6E9BIvSxZAF3jpPjPpQkr-oOuSs&callback=initMap">
+      </script>
+   </body>
+</html>

@@ -23,7 +23,8 @@ SECRET_KEY = 'u7!-y4k1c6b44q507nr_l+c^12o7ur++cpzyn!$65w^!gum@h%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_HTTPONLY = True
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',  # A messaging framework.
     'django.contrib.staticfiles',  # A framework for managing static files.
     'guests.apps.GuestsConfig',
+    'wedding.apps.WeddingConfig'
 ]
 
 MIDDLEWARE = [
@@ -52,7 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bigday.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -106,13 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -128,20 +125,24 @@ STATICFILES_DIRS = (
 DEFAULT_WEDDING_FROM_EMAIL = '信箱 <yui745698@gmail.com>'
 # the default reply-to of your emails
 DEFAULT_WEDDING_REPLY_EMAIL = 'yui745698@gmail.com'
-
 # when sending test emails it will use this address
 DEFAULT_WEDDING_TEST_EMAIL = DEFAULT_WEDDING_FROM_EMAIL
-
 # This is used in a few places where the names of the couple are used
 BRIDE_AND_GROOM = 'GUOJUN And YUIPEI'
-
 # This is used in links in save the date / invitations
 WEDDING_WEBSITE_URL = 'http://thehappycouple.com'
 WEDDING_CC_LIST = []  # put email addresses here if you want to cc someone on all your invitations
 
+# celery
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+
 # change to a real email backend in production
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+DJANGO_ALLOW_ASYNC_UNSAFE = True
 try:
     from .localsettings import *
 except ImportError:
