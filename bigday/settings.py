@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',  # A session framework.
     'django.contrib.messages',  # A messaging framework.
     'django.contrib.staticfiles',  # A framework for managing static files.
-    'guests.apps.GuestsConfig',
     'wedding.apps.WeddingConfig'
 ]
 

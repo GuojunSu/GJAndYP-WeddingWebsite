@@ -1,47 +1,14 @@
-<!--<section class="cd-h-timeline js-cd-h-timeline margin-bottom-md">-->
-<section class="cd-h-timeline js-cd-h-timeline margin-bottom-md">
-    <div class="cd-h-timeline__container container">
-        <div class="cd-h-timeline__dates">
-            <div class="cd-h-timeline__line">
-                <ol>
-                    {% for timeline in timelineSet %}
-                    <li>
-                        {% if timeline.selection %}
-                        <a href="#0" data-date="{{timeline.date}}"
-                           class="cd-h-timeline__date cd-h-timeline__date--selected">
-                            {{timeline.time}}</a>
-                        {% else %}
-                        <a href="#0" data-date="{{timeline.date}}" class="cd-h-timeline__date">
-                            {{timeline.time}}</a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ol>
-                <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>
-            </div> <!-- .cd-h-timeline__line -->
-        </div> <!-- .cd-h-timeline__dates -->
-
-        <ul>
-            <li><a href="#0"
-                   class="text-replace cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive">Prev</a>
-            </li>
-            <li><a href="#0" class="text-replace cd-h-timeline__navigation cd-h-timeline__navigation--next">Next</a>
-            </li>
-        </ul>
-    </div> <!-- .cd-h-timeline__container -->
-    <div class="cd-h-timeline__events">
-        <ol>
-            {% for timelineEvent in timelineEventSet %}
-            <li class="cd-h-timeline__event text-component">
-                <div class="cd-h-timeline__event-content container">
-                    <h3 class="cd-h-timeline__event-title">{{timelineEvent.event_title}}</h3>
-                    <em class="cd-h-timeline__event-date">{{timelineEvent.event_date}}</em>
-                    <p class="cd-h-timeline__event-description color-contrast-medium">
-                        {% include "partials/carousel.html" with imageInfoS=timelineEvent.imageInfoS %}
-                    </p>
+{% load dict_tags %}
+<div class="timeline">
+    <div class="timeline__wrap">
+        <div class="timeline__items">
+            {% for event in timelineEventSet.Events %}
+            <div class="timeline__item">
+                <div class="timeline__content">​
+                    {% include "partials/story-item.html" with imageSet=timelineEventSet|get_item:event event_name=event %}
                 </div>
-            </li>
+            </div>
             {% endfor %}
-        </ol>
-    </div> <!-- .cd-h-timeline__events -->
-</section>
+        </div>
+    </div>
+</div>

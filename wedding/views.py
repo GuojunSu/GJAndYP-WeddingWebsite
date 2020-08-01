@@ -2,7 +2,6 @@ from django.conf import settings
 from django.shortcuts import render
 from django.http import JsonResponse
 from celery import current_app
-from guests.save_the_date import SAVE_THE_DATE_CONTEXT_MAP
 from wedding.models import OurStory
 import json
 from django.views.decorators.csrf import csrf_exempt
@@ -10,12 +9,9 @@ from .tasks import ExecGoogleDirectionTask
 
 
 def home(request):
-    ourStory = OurStory()
     return render(request, 'home.html', context={
-        'save_the_dates': SAVE_THE_DATE_CONTEXT_MAP,
         'support_email': settings.DEFAULT_WEDDING_REPLY_EMAIL,
-        'timelineEventSet': ourStory.OurStorySet["timelineEventSet"],
-        'timelineSet': ourStory.OurStorySet["timelineSet"]
+        'timelineEventSet': OurStory().StoryEvents
     })
 
 

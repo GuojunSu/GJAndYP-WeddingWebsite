@@ -4,15 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-
-    <!-- Modified from https://github.com/IronSummitMedia/startbootstrap-creative -->
     <title>GJ Su and YP Chang's婚禮</title>
-
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
     <!--ASSETS CSS-->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
@@ -28,17 +24,15 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {% include "partials/google-analytics.html" %}
     {% block page_head %} {% endblock %}
 </head>
 <body id="page-top">
 {% block page_content %}{% endblock %}
+{% include "partials/footer.html"  %}
 <!-- jQuery -->
 <script src="{% static 'creative/js/jquery.js' %}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{% static 'bootstrap-3.3.6-dist/js/bootstrap.min.js' %}"></script>
-
 <script src="{% static 'bigday/js/footer.js' %}"></script>
 <script>
         $(document).ready(function() {
@@ -48,7 +42,8 @@
         });
 
 </script>
-<script src="{% static 'assets/js/util.js' %}"></script><!-- util functions included in the CodyHouse framework -->
+<script src="{% static 'assets/js/util.js' %}"></script>
+<!-- util functions included in the CodyHouse framework -->
 <script src="{% static 'assets/js/swipe-content.js' %}"></script>
 <!-- A Vanilla JavaScript plugin to detect touch interactions -->
 <script src="{% static 'assets/js/main.js' %}"></script>
