@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="author" content="">
     <title>GJ Su and YP Chang's婚禮</title>
-    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 
     <!--ASSETS CSS-->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
@@ -28,10 +29,9 @@
 </head>
 <body id="page-top">
 {% block page_content %}{% endblock %}
-{% include "partials/footer.html"  %}
+{% include "partials/footer.html" %}
 <!-- jQuery -->
 <script src="{% static 'creative/js/jquery.js' %}"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static 'bigday/js/footer.js' %}"></script>
 <script>
@@ -40,6 +40,7 @@
             setFooterStyle();  // hack, for some reason this needs to be called twice on load
             window.onresize = setFooterStyle;
         });
+
 
 </script>
 <script src="{% static 'assets/js/util.js' %}"></script>

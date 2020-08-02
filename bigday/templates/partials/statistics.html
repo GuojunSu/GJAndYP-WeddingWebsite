@@ -1,133 +1,129 @@
-<div style="margin-right:60px;margin-left:60px;">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <div class="page-header">
         <h2><label style="color:#F75000;">宴客登記</label></h2>
     </div>
-    <div >
-        <div class="row">
-            <div class=" col-sm-6">
-                <div class="card card-default">
-                    <div class="card-body">
-                        <h3 class="card-title"><i class="glyphicon glyphicon-user"></i> 個人資料</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon" for="_nameInput">姓名</label>
-                                    <input type="text" class="form-control" id="_nameInput" placeholder="Username"
-                                           aria-label="Username"
-                                           aria-describedby="basic-addon1" autocomplete="off" required>
-                                    <div class="input-group-btn" id="_dropdown">
-                                        <button type="button" class="btn btn-default dropdown-toggle"
-                                                id="dropdownMenu1"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">性別
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right"
-                                            aria-labelledby="dropdownMenu1">
-                                            <li><a href="#statistics" data-value="sir">先生</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#statistics" data-value="lady">小姐</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon">E-mail</label>
-                                    <input type="email" class="form-control" placeholder="email-account"
-                                           name="email" autocomplete="off" required>
-                                    <label class="input-group-addon">@</label>
-                                    <input type="text" class="form-control" placeholder="email-domain"
-                                           name="email" autocomplete="off" required>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon" for="_WeddingInvitation">紙本喜帖</label>
-                                    <div class="input-group-btn" id="btn-toggle">
-                                        <button class="btn btn-default" data-toggle="collapse"
-                                                data-target="#collapsible">
-                                            YES
-                                        </button>
-                                        <button class="btn btn-success active" data-toggle="collapse"
-                                                data-target="#collapsible">NO
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="well collapse" id="collapsible">
-                                    <div class="input-group input-group-lg">
-                                        <span class="input-group-addon">住址</span>
-                                        <input type="text" id="_WeddingInvitation" class="form-control"
-                                               placeholder="address" autocomplete="off" required>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon" for="btn-toggle_Relational">親友</label>
-                                    <div class="input-group-btn" id="btn-toggle_Relational">
-                                        <button class="btn btn-default">男方</button>
-                                        <button class="btn btn-success active">女方</button>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+    <div class="card card-default">
+        <div class="card-body">
+            <h3 class="card-title"><i class="glyphicon glyphicon-user"></i> 個人資料</h3>
+            <ul class="list-group-flush">
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon" for="_nameInput">姓名</label>
+                        <input type="text" class="form-control" id="_nameInput" placeholder="Username"
+                               aria-label="Username"
+                               aria-describedby="basic-addon1" autocomplete="off" required>
+                        <div class="input-group-btn" id="_dropdown">
+                            <button type="button" class="btn btn-default dropdown-toggle"
+                                    id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">性別
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right"
+                                aria-labelledby="dropdownMenu1">
+                                <li><a href="#statistics" data-value="sir">先生</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#statistics" data-value="lady">小姐</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class=" col-sm-6">
-                <div class="card card-default">
-                    <div class="card-body">
-                        <h3 class="card-title"><i class="glyphicon glyphicon-pencil"></i>人數統計</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon" for="participate_person_amount">參與人數</label>
-                                    <input type="text" class="form-control" id="participate_person_amount" value=1
-                                           readonly="readonly">
-                                    <div class="input-group-btn custom-control">
-                                        <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenu2"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                            <i class="glyphicon glyphicon-plus-sign"></i>人
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul id="amount_participant" class="dropdown-menu dropdown-menu-right"
-                                            aria-labelledby="dropdownMenu1">
-                                            <li><a href="#statistics" data-value=1>1</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#statistics" data-value=2>2</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#statistics" data-value=3>3</a></li>
-                                        </ul>
-                                    </div><!-- /btn-group -->
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon"><i
-                                            class="glyphicon glyphicon-baby-formula"></i>兒童座椅</label>
-                                    <div class="input-group-btn" id="btn-toggle_HasChild">
-                                        <button class="btn btn-default">YES</button>
-                                        <button class="btn btn-success active">NO</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="input-group input-group-lg">
-                                    <label class="input-group-addon">飲食</label>
-                                    <div class="input-group-btn" id="btn-toggle_Vegetable">
-                                        <button class="btn btn-default">葷食</button>
-                                        <button class="btn btn-success">素食</button>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="email-account"
+                               name="email" autocomplete="off" required>
                     </div>
-
-                </div>
-            </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon" for="_WeddingInvitation">
+                            <picture>
+                              <source srcset="/static/bigday/icon/wedding-letter.webp" style="width:20px; height:20px">
+                              <img src="/static/bigday/icon/wedding-letter.jpg" style="width:20px; height:20px">
+                            </picture>
+                            紙本喜帖
+                        </label>
+                        <div class="input-group-btn" id="btn-toggle">
+                            <button class="btn btn-default" data-toggle="collapse"
+                                    data-target="#collapsible">是
+                            </button>
+                            <button class="btn btn-success active" data-toggle="collapse"
+                                    data-target="#collapsible">否
+                            </button>
+                        </div>
+                    </div>
+                    <div class="well collapse" id="collapsible">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-home"></i>
+                            </span>
+                            <input type="text" id="_WeddingInvitation" class="form-control"
+                                   placeholder="address" autocomplete="off" required>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon" for="btn-toggle_Relational">親友</label>
+                        <div class="input-group-btn" id="btn-toggle_Relational">
+                            <button class="btn btn-default">男方</button>
+                            <button class="btn btn-success active">女方</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon" for="participate_person_amount">參與人數</label>
+                        <input type="text" class="form-control" id="participate_person_amount" value=1
+                               readonly="readonly">
+                        <div class="input-group-btn custom-control">
+                            <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenu2"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <i class="glyphicon glyphicon-plus-sign"></i>人
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="amount_participant" class="dropdown-menu dropdown-menu-right"
+                                aria-labelledby="dropdownMenu1">
+                                <li><a href="#statistics" data-value=1>1</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#statistics" data-value=2>2</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#statistics" data-value=3>3</a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon"><i
+                                class="glyphicon glyphicon-baby-formula"></i>兒童座椅</label>
+                        <div class="input-group-btn" id="btn-toggle_HasChild">
+                            <button class="btn btn-default">是</button>
+                            <button class="btn btn-success active">否</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="display:inline-block;">
+                            <picture>
+                              <source srcset="/static/bigday/icon/icons8-vegan-food-32.webp" style="width:20px; height:20px">
+                              <img src="/static/bigday/icon/icons8-vegan-food-32.jpg" style="width:20px; height:20px">
+                            </picture>
+                            <label>吃素</label>
+                        </span>
+                        <div class="input-group-btn" id="btn-toggle_Vegetable">
+                            <button class="btn btn-default">是</button>
+                            <button class="btn btn-success">否</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="form-group text-right" style="margin-top:10px;">
+        <div class="card-footer">
             <button type="submit" class="btn  btn-success btn-lg btn-block buy-now">
                 <i class="glyphicon glyphicon-cloud-upload"></i>送出
             </button>

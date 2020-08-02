@@ -1,6 +1,5 @@
 django>=2.2.2
 Fabric==2.5.0
-psycopg2==2.8.5
 selenium
 urllib3
 Celery

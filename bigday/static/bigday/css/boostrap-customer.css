@@ -1,0 +1,10 @@
+/*自動根據內容調整高度，同時設定最小高度*/
+.input-group-btn
+{
+    width:auto
+}
+
+.input-group-addon
+{
+    width:auto
+}
