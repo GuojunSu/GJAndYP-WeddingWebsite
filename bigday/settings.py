@@ -25,7 +25,7 @@ SECRET_KEY = 'u7!-y4k1c6b44q507nr_l+c^12o7ur++cpzyn!$65w^!gum@h%'
 DEBUG = True
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_HTTPONLY = True
-ALLOWED_HOSTS = ['gjandyp.tw']
+ALLOWED_HOSTS = ['gjandyp.tw', '127.0.0.1']
 
 # Application definition
 # note the INSTALLED_APPS setting at the top of the file.

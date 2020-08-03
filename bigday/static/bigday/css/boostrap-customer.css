@@ -3,8 +3,4 @@
 {
     width:auto
 }
-
-.input-group-addon
-{
-    width:auto
-}
+.form-group, .form-control {width : 100%;}

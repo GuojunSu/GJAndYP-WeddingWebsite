@@ -1,10 +1,9 @@
 <div class="container" xmlns="http://www.w3.org/1999/html">
-    <div class="page-header">
-        <h2><label style="color:#F75000;">宴客登記</label></h2>
+    <div class="page-header" style="margin:0px 0 20px">
+        <h3><label style="color:#F75000;">貴賓登記</label></h3>
     </div>
     <div class="card card-default">
         <div class="card-body">
-            <h3 class="card-title"><i class="glyphicon glyphicon-user"></i> 個人資料</h3>
             <ul class="list-group-flush">
                 <li class="list-group-item">
                     <div class="input-group">
@@ -31,51 +30,17 @@
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>
+                            E-Mail
                         </span>
-                        <input type="email" class="form-control" placeholder="email-account"
+                        <input type="email" class="form-control" placeholder="Mail"
                                name="email" autocomplete="off" required>
                     </div>
                 </li>
                 <li class="list-group-item">
-                    <div class="input-group">
-                        <label class="input-group-addon" for="_WeddingInvitation">
-                            <picture>
-                              <source srcset="/static/bigday/icon/wedding-letter.webp" style="width:20px; height:20px">
-                              <img src="/static/bigday/icon/wedding-letter.jpg" style="width:20px; height:20px">
-                            </picture>
-                            紙本喜帖
+                    <div class="input-group input-group-xs">
+                        <label class="input-group-addon" for="participate_person_amount">
+                            貴賓人數
                         </label>
-                        <div class="input-group-btn" id="btn-toggle">
-                            <button class="btn btn-default" data-toggle="collapse"
-                                    data-target="#collapsible">是
-                            </button>
-                            <button class="btn btn-success active" data-toggle="collapse"
-                                    data-target="#collapsible">否
-                            </button>
-                        </div>
-                    </div>
-                    <div class="well collapse" id="collapsible">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-home"></i>
-                            </span>
-                            <input type="text" id="_WeddingInvitation" class="form-control"
-                                   placeholder="address" autocomplete="off" required>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="input-group">
-                        <label class="input-group-addon" for="btn-toggle_Relational">親友</label>
-                        <div class="input-group-btn" id="btn-toggle_Relational">
-                            <button class="btn btn-default">男方</button>
-                            <button class="btn btn-success active">女方</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="input-group">
-                        <label class="input-group-addon" for="participate_person_amount">參與人數</label>
                         <input type="text" class="form-control" id="participate_person_amount" value=1
                                readonly="readonly">
                         <div class="input-group-btn custom-control">
@@ -98,6 +63,51 @@
                 </li>
                 <li class="list-group-item">
                     <div class="input-group">
+                        <label class="input-group-addon" for="_WeddingInvitation">
+                            <picture>
+                                <source srcset="/static/bigday/icon/wedding-letter.webp"
+                                        style="width:20px; height:20px">
+                                <img src="/static/bigday/icon/wedding-letter.jpg" style="width:20px; height:20px">
+                            </picture>
+                            喜帖
+                        </label>
+                        <div class="input-group-btn" id="btn-toggle">
+                            <button class="btn btn-default" data-toggle="collapse"
+                                    data-target="#collapsible">是
+                            </button>
+                            <button class="btn btn-success active" data-toggle="collapse"
+                                    data-target="#collapsible">否
+                            </button>
+                        </div>
+                    </div>
+                    <div class="well collapse" id="collapsible">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                地址
+                            </span>
+                            <input type="text" id="_WeddingInvitation" class="form-control"
+                                   placeholder="address" autocomplete="off" required>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <label class="input-group-addon" for="btn-toggle_Relational">
+                            <picture>
+                                <source srcset="/static/bigday/icon/contact.webp"
+                                        style="width:20px; height:20px">
+                                <img src="/static/bigday/icon/contact.jpg" style="width:20px; height:20px">
+                            </picture>
+                            親友
+                        </label>
+                        <div class="input-group-btn" id="btn-toggle_Relational">
+                            <button class="btn btn-default">男方</button>
+                            <button class="btn btn-success active">女方</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
                         <label class="input-group-addon"><i
                                 class="glyphicon glyphicon-baby-formula"></i>兒童座椅</label>
                         <div class="input-group-btn" id="btn-toggle_HasChild">
@@ -110,7 +120,8 @@
                     <div class="input-group">
                         <span class="input-group-addon" style="display:inline-block;">
                             <picture>
-                              <source srcset="/static/bigday/icon/icons8-vegan-food-32.webp" style="width:20px; height:20px">
+                              <source srcset="/static/bigday/icon/icons8-vegan-food-32.webp"
+                                      style="width:20px; height:20px">
                               <img src="/static/bigday/icon/icons8-vegan-food-32.jpg" style="width:20px; height:20px">
                             </picture>
                             <label>吃素</label>
